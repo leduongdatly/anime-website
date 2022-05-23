@@ -1,5 +1,40 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { publicRoutes } from './routes';
+import { DefaultLayout } from './components/Layout';
+import { Fragment } from 'react';
+
 function App() {
-  return <div className='App'>Duong</div>;
+  return (
+    <Router>
+      <div className='App'>
+        <Routes>
+          {publicRoutes.map((route, index) => {
+            let Layout = DefaultLayout;
+
+            const Page = route.component;
+
+            if (route.Layout) {
+              Layout = route.Layout;
+            } else if (route.layout === null) {
+              Layout = Fragment;
+            }
+
+            return (
+              <Route
+                key={index}
+                path={route.path}
+                element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                }
+              />
+            );
+          })}
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
 export default App;

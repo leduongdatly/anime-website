@@ -1,0 +1,17 @@
+.wrapper {
+  width: 100%;
+  box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
+
+  &.mt-40 {
+    margin-top: 40px;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 8px;
+  border-bottom: 1px solid #ccc;
+  padding: 4px 0;
+}

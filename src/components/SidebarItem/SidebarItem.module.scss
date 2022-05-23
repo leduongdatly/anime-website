@@ -1,0 +1,49 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px;
+
+  &:nth-child(2n + 0) {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.avatar {
+  max-width: 50px;
+  max-height: 60px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.detail {
+  margin-left: 16px;
+  line-height: 1.4;
+}
+
+.name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.desc {
+  font-size: 1.4rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.score {
+  font-weight: 600;
+  font-size: 1.4rem;
+}

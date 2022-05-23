@@ -1,0 +1,46 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  &:hover:after {
+    display: block;
+  }
+}
+
+.img {
+  width: 100%;
+  max-height: 240px;
+  min-height: 240px;
+  display: block;
+}
+
+.detail {
+  font-size: 1.4rem;
+  padding: 8px;
+}
+
+.name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.episode {
+}
