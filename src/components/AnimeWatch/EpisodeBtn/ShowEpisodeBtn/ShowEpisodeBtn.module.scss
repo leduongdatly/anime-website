@@ -1,0 +1,23 @@
+.wrapper {
+  margin-top: 8px;
+}
+
+.ep-btn {
+  display: inline-block;
+  margin-bottom: 4px;
+  padding: 8px 16px;
+  background-color: #ccc;
+  cursor: pointer;
+
+  + .ep-btn {
+    margin-left: 4px;
+  }
+
+  &:hover {
+    background-color: rgb(240, 238, 238);
+  }
+
+  &.active {
+    background-color: var(--primary);
+  }
+}

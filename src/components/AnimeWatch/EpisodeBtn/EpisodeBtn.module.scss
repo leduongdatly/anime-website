@@ -1,0 +1,18 @@
+.from-to {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #ccc;
+  cursor: pointer;
+
+  + .from-to {
+    margin-left: 8px;
+  }
+
+  &:hover {
+    background-color: rgb(240, 238, 238);
+  }
+
+  &.active {
+    background-color: pink;
+  }
+}

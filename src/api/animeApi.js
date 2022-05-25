@@ -1,3 +1,4 @@
+import axios from 'axios';
 import axiosClient from './axiosClient';
 
 const animeApi = {
@@ -35,6 +36,12 @@ const animeApi = {
   getGenres: () => {
     const url = '/v1/resources/1.0/0';
     return axiosClient.get(url);
+  },
+
+  getAllEpisode: (id, params) => {
+    const url = `v1/episode?locale=it&is_dub=true&source=dreamsub&anime_id=${id}`;
+    // const url = 'https://api.aniapi.com/v1/episode?anime_id=745&is_dub=false';
+    return axiosClient.get(url, { params });
   },
 };
 

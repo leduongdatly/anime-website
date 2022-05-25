@@ -6,6 +6,7 @@ import AnimeCard from '~/components/AnimeCard/AnimeCard';
 import AnimeFilter from '~/components/AnimeFilter';
 import Loading from '~/components/Loading';
 import Pagination from '~/components/Pagination/Pagination';
+import ScrollTop from '~/components/ScrollTop';
 import styles from './Home.module.scss';
 
 const cx = classNames.bind(styles);
@@ -49,41 +50,20 @@ const Home = () => {
     getAnimes();
   }, [currentPage]);
 
-  // const onPassData = async (data) => {
-  //   data.status = data.status === 'false' ? false : Number(data.status);
-  //   data.year = data.year === 'false' ? false : Number(data.year);
-  //   data.season = data.season === 'false' ? false : Number(data.season);
-
-  //   try {
-  //     const params = {
-  //       page: currentPage,
-  //       per_page: 16,
-  //     };
-  //     const response = await animeApi.getbyFilter(params, data.status, data.year, data.season, data.gernes);
-  //     if (response.status_code === 200) {
-  //       setTotalPage(response.data.last_page);
-  //       setAnimeResult(response.data.documents || []);
-  //     } else {
-  //       alert('Có lỗi trong quá trình tải dữ liệu');
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   if (loading) {
     return <Loading />;
   }
 
   return (
     <div className={cx('wrapper')}>
+      <ScrollTop />
       {/* <AnimeFilter onPassData={onPassData} /> */}
       <h3 className={cx('info')}>
         Trang {currentPage} / {totalPage}
       </h3>
       <div className={cx('grid')}>
         <div className={cx('row')}>
-          {animeResult.map((result, index) => {
+          {animeResult.map((result) => {
             return (
               <div className={cx('col l-3')} key={result.id}>
                 <AnimeCard result={result} />

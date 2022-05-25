@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import { createSearchParams, useNavigate, useSearchParams } from 'react-router-dom';
 import animeApi from '~/api/animeApi';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import SearchItem from '~/components/SearchItem';
+import SearchItem from '~/components/Layout/components/Search/SearchItem';
 import { useDebounce } from '~/hooks';
 import styles from './Search.module.scss';
 

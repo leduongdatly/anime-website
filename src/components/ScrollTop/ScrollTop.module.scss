@@ -1,0 +1,17 @@
+.wrapper {
+}
+
+.button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: var(--primary);
+  padding: 16px;
+  border-radius: 50%;
+  transition: 1s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

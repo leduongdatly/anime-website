@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
 import classNames from 'classnames/bind';
-import styles from './AnimeDetail.module.scss';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import VideoPlayer from '~/components/VideoPlayer';
+import AnimeDetail from '~/components/AnimeDetail';
+import styles from './Detail.module.scss';
 
 const cx = classNames.bind(styles);
 
-const AnimeDetail = () => {
+const Detail = () => {
   const { id } = useParams();
 
   useEffect(() => {
@@ -15,9 +15,9 @@ const AnimeDetail = () => {
 
   return (
     <div className={cx('wrapper')}>
-      <VideoPlayer />
+      <AnimeDetail />
     </div>
   );
 };
 
-export default AnimeDetail;
+export default Detail;

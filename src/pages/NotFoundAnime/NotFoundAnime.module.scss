@@ -1,0 +1,15 @@
+.wrapper {
+  margin-top: 8px;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.navigate {
+  font-weight: 600;
+
+  &:hover {
+    color: var(--primary);
+  }
+}

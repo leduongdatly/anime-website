@@ -1,0 +1,25 @@
+.wrapper {
+  margin-top: 8px;
+  max-height: 435px;
+  overflow-y: scroll;
+  box-shadow: var(--box-shadow-2);
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    z-index: 100;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 8px;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 8px;
+  border-bottom: 1px solid #ccc;
+  padding: 4px 0;
+}

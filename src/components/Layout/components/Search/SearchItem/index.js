@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 const SearchItem = ({ result }) => {
   return (
-    <Link to={`/anime/${result.id}`} className={cx('wrapper')}>
+    <Link to={`/detail/${result.id}`} className={cx('wrapper')}>
       <img className={cx('avatar')} src={result.cover_image} alt={result.titles.en} />
       <div className={cx('info')}>
         <h4 className={cx('name')}>{result.titles.en}</h4>
