@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './NotHeaderLayout.module.scss';
 import Header from '../components/Header';
 import Recommend from './Recommend';
+import ScrollTop from '~/components/ScrollTop';
 
 const cx = classNames.bind(styles);
 
@@ -10,6 +11,7 @@ const NotHeaderLayout = ({ children }) => {
   return (
     <div>
       <Header />
+      <ScrollTop />
       <div className={cx('wrapper')}>
         <div className={cx('grid wide')}>
           <div className={cx('row')}>

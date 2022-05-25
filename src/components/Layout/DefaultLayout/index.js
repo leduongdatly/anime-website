@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '~/components/Layout/components/Header';
 import Sidebar from './Sidebar';
 import styles from './DefaultLayout.module.scss';
+import ScrollTop from '~/components/ScrollTop';
 
 const cx = classNames.bind(styles);
 
@@ -12,6 +13,7 @@ const DefaultLayout = ({ children }) => {
   return (
     <div>
       <Header />
+      <ScrollTop />
       <div className={cx('wrapper')}>
         <div className={cx('grid wide')}>
           <div className={cx('row')}>

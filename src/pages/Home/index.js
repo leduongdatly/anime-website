@@ -4,6 +4,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import animeApi from '~/api/animeApi';
 import AnimeCard from '~/components/AnimeCard/AnimeCard';
 import AnimeFilter from '~/components/AnimeFilter';
+import Helmet from '~/components/Helmet';
 import Loading from '~/components/Loading';
 import Pagination from '~/components/Pagination/Pagination';
 import ScrollTop from '~/components/ScrollTop';
@@ -55,25 +56,26 @@ const Home = () => {
   }
 
   return (
-    <div className={cx('wrapper')}>
-      <ScrollTop />
-      {/* <AnimeFilter onPassData={onPassData} /> */}
-      <h3 className={cx('info')}>
-        Trang {currentPage} / {totalPage}
-      </h3>
-      <div className={cx('grid')}>
-        <div className={cx('row')}>
-          {animeResult.map((result) => {
-            return (
-              <div className={cx('col l-3')} key={result.id}>
-                <AnimeCard result={result} />
-              </div>
-            );
-          })}
+    <Helmet title='Trang chủ'>
+      <div className={cx('wrapper')}>
+        {/* <AnimeFilter onPassData={onPassData} /> */}
+        <h3 className={cx('info')}>
+          Trang {currentPage} / {totalPage}
+        </h3>
+        <div className={cx('grid')}>
+          <div className={cx('row')}>
+            {animeResult.map((result) => {
+              return (
+                <div className={cx('col l-3')} key={result.id}>
+                  <AnimeCard result={result} />
+                </div>
+              );
+            })}
+          </div>
+          <Pagination page={page} totalPage={totalPage} currentPage={currentPage} />
         </div>
-        <Pagination page={page} totalPage={totalPage} currentPage={currentPage} />
       </div>
-    </div>
+    </Helmet>
   );
 };
 

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import animeApi from '~/api/animeApi';
 import AnimeCard from '~/components/AnimeCard/AnimeCard';
+import Helmet from '~/components/Helmet';
 import Loading from '~/components/Loading';
 import styles from './Search.module.scss';
 
@@ -57,22 +58,24 @@ const Search = () => {
   }
 
   return (
-    <div className={cx('wrapper')}>
-      <div className={cx('grid')}>
-        {/* <AnimeFilter onPassData={onPassData} /> */}
-        <h3 className={cx('found')}>Tìm thấy {searchResult.length} kết quả</h3>
-        <div className={cx('row')}>
-          {searchResult.map((result) => {
-            return (
-              <div className={cx('col l-3')} key={result.id}>
-                <AnimeCard result={result} />
-              </div>
-            );
-          })}
+    <Helmet title={`Kết quả tìm kiếm cho ${title}`}>
+      <div className={cx('wrapper')}>
+        <div className={cx('grid')}>
+          {/* <AnimeFilter onPassData={onPassData} /> */}
+          <h3 className={cx('found')}>Tìm thấy {searchResult.length} kết quả</h3>
+          <div className={cx('row')}>
+            {searchResult.map((result) => {
+              return (
+                <div className={cx('col l-3')} key={result.id}>
+                  <AnimeCard result={result} />
+                </div>
+              );
+            })}
+          </div>
+          {/* <Pagination page={page} totalPage={totalPage} currentPage={currentPage} /> */}
         </div>
-        {/* <Pagination page={page} totalPage={totalPage} currentPage={currentPage} /> */}
       </div>
-    </div>
+    </Helmet>
   );
 };
 
